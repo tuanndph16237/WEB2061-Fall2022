@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excersise 4</title>
+    <style>
+        .user_item{
+            color: lime;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div>
+            <label>ID</label>
+            <input type="number" id="addUserID" value="" placeholder="">
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" id="addUserText" value="" placeholder="">
+        </div>
+        <div>
+            <label>Gender</label>
+            <select name="" id="addUserGender">
+                <option value="1">male</option>
+                <option value="2">female</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" id="addAction">Add</button>
+        </div>
+    </div>
+    <ul id="target">
+        <li class="user_item">1 - Tran thi loan</li>
+        <li class="user_item">2 - Vu anh tu</li>
+        <li class="user_item">3 - Le trong dat</li>
+        <li class="user_item">4 - Nguyen duc anh tuan</li>
+        <li class="user_item">5 - Tran huu thien</li>
+    </ul>
+    <script>
+        var users = [
+            {id :1, name: "Tran thi loan", gerder: 1},
+            {id :2, name: "Vu anh tu", gerder: 2},
+            {id :3, name: "Le trong dat", gerder: 1},
+            {id :4, name: "Nguyen duc anh tuan", gerder: 2},
+            {id :5, name: "Tran huu thien", gerder: 1},
+        ];
+        var target = document.querySelector("#target");
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excersise 3</title>
+    <style>
+        .user_item{
+            color: lime;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="target">
+        <li class="user_item">1 - Tran thi loan</li>
+        <li class="user_item">2 - Vu anh tu</li>
+        <li class="user_item">3 - Le trong dat</li>
+        <li class="user_item">4 - Nguyen duc anh tuan</li>
+        <li class="user_item">5 - Tran huu thien</li>
+    </ul>
+
+    <script>
+        var users = [
+            {id :1, name: "Tran thi loan", gerder: 1},
+            {id :2, name: "Vu anh tu", gerder: 2},
+            {id :3, name: "Le trong dat", gerder: 1},
+            {id :4, name: "Nguyen duc anh tuan", gerder: 2},
+            {id :5, name: "Tran huu thien", gerder: 1},
+        ];
+        var target = document.querySelector("#target");
+    </script>
+</body>
+</html>
