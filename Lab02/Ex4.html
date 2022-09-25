@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="display: flex; flex-direction: column; width: 500px; margin: 0 auto;">Personal Information</h1>
+    <form action="" style="display: flex; flex-direction: column; width: 500px; margin: 0 auto;">
+        <label for="">1st Person Name</label>
+        <input type="text">
+        <label for="">1st Person Age</label>
+        <input type="text">
+        <label for="">1st Person Address</label>
+        <input type="text">
+
+        <label for="">2nd Person Name</label>
+        <input type="text">
+        <label for="">2nd Person Age</label>
+        <input type="text">
+        <label for="">2nd Person Address</label>
+        <input type="text">
+
+        <button>show-profile</button>
+    </form>
+    <div class="form" style="width: 500px; margin: 50px auto;"></div>
+
+    <script>
+        const elFirstPerson = document.querySelectorAll('.first');
+        const elSecondPerson = document.querySelectorAll('.second');
+        const elShow = document.querySelector('.show');
+        const elForm = document.querySelector('form');
+
+        const Person = {
+            name: "Tuannd", age: 20, address: 'FPOLY HN',
+            showProfile: function() {
+                const elRender = document.createElement('div');
+                elRender.innerHTML = `<hr><ul>
+                    <li>Name: ${this.name}</li>
+                    <li>Name: ${this.age}</li>
+                    <li>Name: ${this.address}</li>
+                    </ul> <hr>`
+                elShow.appendChild(elRender);
+            }
+        }
+        function checkForm(){
+            let result = true;
+            elFirstPerson.forEach(item =>{
+                if (item.value == ''){
+                    result = false;
+                }
+            });
+            elSecondPerson.forEach(item =>{
+                if (item.value == ''){
+                    result = false;
+                }
+            });
+        }
+
+        elForm.addEventListener('submit', function (e){
+            e.preventDefault();
+            if(checkForm()){
+                let fName = elFirstPerson[0].value;
+                let fAge = elFirstPerson[1].value;
+                let fAddress = elFirstPerson[2].value;
+                let first = {
+                    _proto_:Person
+                }
+                let sName = elSecondPerson[0].value;
+                let sAge = elSecondPerson[1].value;
+                let sAddress = elSecondPerson[2].value;
+                let second = {
+                    _proto_:Person
+                }
+                first.showProfile();
+                second.showProfile();
+
+                elFirstPerson.forEach(item=>{
+                    item.value = ''
+                });
+                elSecondPerson.forEach(item=>{
+                    item.value = ''
+                });
+            }else{
+                alert('Please input value!')
+            }
+        })
+        const p = new Person("Tuannd", 20, 'Ha Noi');
+    </script>
+</body>
+</html>

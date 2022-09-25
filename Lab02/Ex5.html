@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Order list</h1>
+    <p>Meal Name: <input type="text" name="" id="" class="meal-name"></p>
+    <p>So Luong: <input type="number" name="" id="" class="so-luong"></p>
+    <p><button>Add</button></p>
+    <select id="list" onchange="getSelectValue();">
+        <option value="Dessert">Dessert</option>
+        <option value="Beverage">Beverage</option>
+        <option value="Drink">Drink</option>
+        <option value="Dipping">Dipping</option>
+    </select>
+    <ul class="meal"></ul>
+    <script>
+        
+        function getSelectValue()
+        {
+            var selectedValue = document.getElementById("list").value;
+            console.log(selectedValue);
+        }
+        getSelectValue();
+        alert('Please input value!')
+    </script>
+</body>
+</html>

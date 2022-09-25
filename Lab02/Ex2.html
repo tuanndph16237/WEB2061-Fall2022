@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <p>Subject Name: <input type="text" name="" id="" class="sub-name"></p>
+    <p>Point: <input type="number" name="" id="" class="point"></p>
+    <p><button>Add</button></p>
+    <div class="show">
+        <div class="name"></div>
+        <div class="age"></div>
+        <div class="address"></div>
+        <p><button onclick="add()">Subject</button></p>
+        <ul class="subjects"></ul>
+    </div>
+    <script>
+        let student = {
+            id: "PH16237",
+            fullName: "Tuannd",
+            age: 20,
+            address: "Fpoly HN",
+            study_major: "Web front-end, Web Back-end",
+            subjects:[
+                {name: "HTML", point: 8},
+                {name: "CSS", point: 8},
+                {name: "JS", point: 8},
+                {name: "PHP", point: 8}
+            ]
+        };
+        const elName = document.querySelector('.name');
+        const elAge = document.querySelector('.age');
+        const elAddress = document.querySelector('.address');
+        const elSubject = document.querySelector('.subjects');
+        
+        const renderHTML = function(data){
+            elName.innerText ='FullName:'+ data.fullName;
+            elAge.innerText ='Age:'+ data.age;
+            elAddress.innerText ='Address:'+ data.address;
+
+            let subject = data.subjects.map(item=>{
+                return `<li>${item.name} - ${item.point}</li>`
+            })
+            elSubject.innerHTML = subject.join('');
+        }
+        renderHTML(student);
+        const add = function(){
+            const subInput = document.querySelector('.sub-name').value
+            const pointInput = document.querySelector('.point').value
+            student.subjects.push({
+                name: subInput,
+                point: pointInput
+            });
+            renderHTML(student);
+        }
+    </script>
+</body>
+</html>

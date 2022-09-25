@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            id: "PH16237",
+            fullName: "TuanND",
+            email: "tuanndph16237@fpt.edu.vn",
+            avatar: "file_type_vscode_icon_130084.png",
+            address: "FPOLY HN",
+            study_major:"Js nang cao",
+            avgScore: 8,
+            getAvgScore: function(){
+                console.log('getAvgScore:' + this.avgScore);
+                return this.avgScore;
+            },
+            setAvgScore: function(mark){
+                this.avgScore = mark;
+                console.log('setAvgScore:'+mark);
+                return this.avgScore;
+            },
+            changeAddress: function(address){
+                this.address = address;
+                console.log('changeAddress:'+address);
+                return this.address;
+            }
+        }
+        console.log(student);
+        console.log(student.getAvgScore());
+        console.log(student.setAvgScore(7));
+        console.log(student.changeAddress('Ha Noi'));
+        console.log(student);
+    </script>
+</body>
+</html>
