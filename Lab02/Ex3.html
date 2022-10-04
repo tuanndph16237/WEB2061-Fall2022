@@ -17,8 +17,8 @@
             this.subjects = subjects;
         }
         function studentPoly(name, age, address, phone, birthday, subjects){
-            student.call(this, name, age, address, phone, birthday, subjects)
-            this.getAvgScore() = function() {
+            student.call(this, name, age, address, phone, birthday, subjects);
+            this.getAvgScore = function() {
                 let sum = 0;
                 this.subjects.forEach(function (item){
                     sum = sum + item.point;
